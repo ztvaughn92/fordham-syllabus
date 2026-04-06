@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FNBU 3448 — Advanced Real Estate Finance</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f4f0; color: #1a1a1a; padding: 24px; }
+h1 { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+.sub { font-size: 13px; color: #666; margin-bottom: 24px; }
+.phase { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #555; padding: 20px 0 6px; border-bottom: 1px solid #ccc; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.pdot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.pdesc { font-weight: 400; text-transform: none; letter-spacing: 0; color: #999; }
+.card { background: #fff; border: 1px solid #ddd; border-radius: 10px; margin-bottom: 7px; overflow: hidden; }
+.ch { display: flex; align-items: center; gap: 10px; padding: 13px 16px; cursor: pointer; }
+.ch:hover { background: #f9f9f6; }
+.wn { font-size: 11px; color: #999; min-width: 54px; font-weight: 600; }
+.wt { font-size: 14px; font-weight: 600; flex: 1; line-height: 1.4; }
+.tags { display: flex; gap: 4px; flex-shrink: 0; }
+.tag { font-size: 10px; padding: 2px 8px; border-radius: 20px; font-weight: 600; }
+.tg { background: #e6f1fb; color: #0c447c; }
+.ty { background: #eaf3de; color: #27500a; }
+.ts { background: #faeeda; color: #633806; }
+.to { background: #fbeaf0; color: #72243e; }
+.arr { font-size: 11px; color: #bbb; transition: transform 0.2s; margin-left: 2px; }
+.arr.open { transform: rotate(90deg); }
+.bd { display: none; border-top: 1px solid #eee; }
+.bd.open { display: block; }
+.gbar { background: #e6f1fb; color: #0c447c; font-size: 11px; font-style: italic; padding: 7px 16px; border-bottom: 1px solid #c5d9ef; }
+.tl { padding: 12px 16px 8px; display: flex; flex-direction: column; gap: 5px; }
+.bl { border-radius: 6px; padding: 8px 11px; }
+.bt { font-size: 10px; color: #888; margin-bottom: 2px; }
+.bn { font-size: 12px; font-weight: 700; }
+.bs { font-size: 11px; line-height: 1.5; margin-top: 3px; opacity: 0.88; }
+.you { background: #eaf3de; } .you .bn { color: #27500a; }
+.gue { background: #e6f1fb; border-left: 3px solid #378add; } .gue .bn { color: #0c447c; }
+.brk { background: #f5f5f5; } .brk .bn { color: #888; font-weight: 400; }
+.deb { background: #faeeda; } .deb .bn { color: #633806; }
+.exc { background: #eeedfe; } .exc .bn { color: #3c3489; }
+.off { background: #fbeaf0; } .off .bn { color: #72243e; }
+.dtw { background: #f1efe8; } .dtw .bn { color: #444; }
+.cls { background: #faece7; } .cls .bn { color: #993c1d; }
+.dws { border-top: 1px solid #eee; padding: 8px 16px; background: #f1efe8; }
+.dws.dbl { background: #ddd; }
+.dws.non { background: #f9f9f9; }
+.dwl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #555; margin-bottom: 3px; }
+.dwr { font-size: 12px; color: #555; line-height: 1.6; }
+.dwr + .dwr { border-top: 1px solid #ccc; margin-top: 3px; padding-top: 3px; }
+.dwn { font-size: 12px; color: #bbb; font-style: italic; }
+.grid { display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #eee; }
+.gc { padding: 12px 16px; font-size: 12px; line-height: 1.65; }
+.gc:not(:last-child) { border-right: 1px solid #eee; }
+.gl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 5px; }
+.gc ul { padding-left: 15px; margin: 0; }
+.gc li { margin-bottom: 3px; }
+</style>
+</head>
+<body>
+
+<h1>FNBU 3448 — Advanced Real Estate Finance</h1>
+<div class="sub">Fordham University · Gabelli School of Business · Monday 6:30–9:15 PM · 30 students · Click any week to expand</div>
+
+<div class="phase"><div class="pdot" style="background:#378ADD"></div>Phase 1 <span class="pdesc">— Market understanding and capital strategy</span></div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 1</span><span class="wt">The capital landscape, asset types, and how investors think</span><div class="tags"><span class="tag ty">Your expertise</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–7:00</div><div class="bn">Lecture: who invests and why</div><div class="bs">Institutional investors — pension funds, sovereign wealth, family offices, PE, REITs. Risk/return spectrum. Public vs. private real estate. How macro conditions (rates, inflation, GDP) flow into a single deal.</div></div>
+      <div class="bl you"><div class="bt">7:00–7:15</div><div class="bn">Lecture: asset types and return profiles</div><div class="bs">Office, industrial, multifamily, retail, hospitality, self-storage, data centers, life science. Cap rate ranges, demand drivers, and cyclicality for each. Why some sectors dominate institutional allocations. The vocabulary the whole course depends on.</div></div>
+      <div class="bl brk"><div class="bt">7:15–7:30</div><div class="bn">Break</div></div>
+      <div class="bl exc"><div class="bt">7:30–8:15</div><div class="bn">Investor + asset type mapping exercise</div><div class="bs">6 groups of 5, each assigned an investor type: pension fund, family office, value-add PE, opportunistic PE, REIT, CDFI. Map preferred asset types, target return, leverage appetite, and hold period. Present back. WeWork as a case study: what investor type backed it and what did the asset type mismatch reveal?</div></div>
+      <div class="bl deb"><div class="bt">8:15–8:45</div><div class="bn">Debrief + semester project brief</div><div class="bs">Introduce the NYC parcel development memo — the project students build incrementally all semester. Walk through the full scope so every week clicks into place. Students begin parcel scouting this week.</div></div>
+      <div class="bl dtw"><div class="bt">8:45–9:15</div><div class="bn">Deal of the week — you model it</div><div class="bs">Demonstrate the format. Assign all 13 remaining pairs their Monday now so everyone has weeks to prepare.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>You — model the format</strong> — Pick a major NYC acquisition or development in the news. Show students exactly what a 10-minute deal presentation looks like.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Institutional capital and real estate allocation</li><li>Risk/return spectrum across investor types</li><li>How rates, inflation, and GDP move real estate values</li><li>Asset types: full landscape, cap rates, demand drivers</li><li>Why some asset types dominate institutional allocations</li><li>Connecting investor type to asset type preference</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>Open with your own story: JPMorgan, JLL, WeWork, MIT, energy. You are living proof that real estate touches everything. Set the tone that this course is about the real world.</div>
+      <div class="gc"><div class="gl">Semester project</div>Begin parcel scouting. Walk a neighborhood this week. Due Week 3: parcel ID (block/lot), current use, zoning designation, and proposed asset type.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 2</span><span class="wt">Fund structures, waterfalls, and how investors get paid</span><div class="tags"><span class="tag ty">Your expertise</span><span class="tag tg">Guest lecture</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="gbar">Guest arrives at 6:45 and leads through 8:00. You open with 15 min of framing and own the back half.</div>
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:45</div><div class="bn">Your framing (15 min)</div><div class="bs">Fund type spectrum: core through opportunistic. How fund type connects to asset type preferences from Week 1. Set up the guest.</div></div>
+      <div class="bl gue"><div class="bt">6:45–8:00</div><div class="bn">Guest — fund manager or PE acquisitions professional</div><div class="bs">Core to opportunistic: real portfolio examples. GP/LP dynamics, promote, preferred return. Waterfall mechanics: return of capital → preferred return → catch-up → carried interest. How the waterfall shapes incentives for everyone in the deal. Q&A throughout. Free to leave at 8:00.</div></div>
+      <div class="bl brk"><div class="bt">8:00–8:10</div><div class="bn">Break (guest departs)</div></div>
+      <div class="bl deb"><div class="bt">8:10–8:45</div><div class="bn">Debrief + waterfall exercise</div><div class="bs">Walk through a waterfall together: $10M equity, 8% pref, 80/20 to a 15% IRR, 70/30 above. What does the GP earn at three exit prices? Then: how does the waterfall change which asset types a GP is incentivized to chase?</div></div>
+      <div class="bl dtw"><div class="bt">8:45–9:15</div><div class="bn">Deal of the week — pair 1</div><div class="bs">10 min presentation + 5 min class reaction.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>Pair 1</strong> — A fund launch, major acquisition, or a deal where the equity structure was noteworthy.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Core, core-plus, value-add, opportunistic — the full spectrum</li><li>How fund type connects to asset type preference</li><li>GP/LP dynamics and the developer promote</li><li>Waterfall mechanics: pref, catch-up, carried interest</li><li>How the promote shapes deal selection and GP incentives</li><li>What fund type backs a ground-up NYC development?</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>JLL: deals migrate between fund types as market conditions shift. Bring one real example connecting fund type to asset type selection.</div>
+      <div class="gc"><div class="gl">Semester project</div>Continue parcel scouting. Walk your site if identified. Think about what asset type makes sense for the location.</div>
+    </div>
+  </div>
+</div>
+
+<div class="phase"><div class="pdot" style="background:#639922"></div>Phase 2 <span class="pdesc">— Site identification, zoning, and entitlement</span></div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 3</span><span class="wt">NYC zoning, FAR, and land use fundamentals</span><div class="tags"><span class="tag ty">Your expertise</span><span class="tag tg">Guest lecture</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="gbar">Guest arrives at 6:45 and leads through 8:00. You open with 15 min and run the live parcel exercise after.</div>
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:45</div><div class="bn">Your framing (15 min)</div><div class="bs">Why zoning is the first thing a developer checks after deciding on an asset type. Introduce NYC ZoLa. What students need for their project memo.</div></div>
+      <div class="bl gue"><div class="bt">6:45–8:00</div><div class="bn">Guest — NYC land use attorney or city planner</div><div class="bs">Zoning districts (R, C, M and subgroups), FAR, use groups, height limits, setbacks, parking minimums. How to read a zoning map. As-of-right development. Zoning bonuses: inclusionary housing, FRESH, transit zone. City of Yes and recent changes. Q&A throughout. Free to leave at 8:00.</div></div>
+      <div class="bl brk"><div class="bt">8:00–8:10</div><div class="bn">Break (guest departs)</div></div>
+      <div class="bl exc"><div class="bt">8:10–8:45</div><div class="bn">Live ZoLa parcel exercise</div><div class="bs">Students pull up their candidate parcels on NYC ZoLa in class. Zoning designation, FAR, maximum buildable SF. Does the zoning support their proposed asset type? You walk the room. Groups without a parcel get assigned one tonight.</div></div>
+      <div class="bl dtw"><div class="bt">8:45–9:15</div><div class="bn">Deal of the week — pair 2 + collect parcel memos</div><div class="bs">10 min + 5 min. Collect parcel selection paragraphs.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>Pair 2</strong> — A zoning variance, special permit, or rezoning story — The City, Crain's, or YIMBY NY.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>NYC zoning districts: R, C, M and subgroups</li><li>FAR and buildable square footage calculation</li><li>Use groups, height limits, setbacks, parking minimums</li><li>Zoning bonuses: inclusionary housing, FRESH, transit zone</li><li>City of Yes and the evolving NYC zoning framework</li><li>As-of-right vs. discretionary — the fundamental distinction</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>Frame the ZoLa exercise: zoning tells you what the market allows; asset type tells you what investors want. Your job as a developer is finding where those two things overlap.</div>
+      <div class="gc"><div class="gl">Semester project</div>Parcel selection memo due tonight: block/lot, current use, zoning designation, as-of-right buildable FAR, proposed asset type, and development vision.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 4</span><span class="wt">Entitlement and the NYC approval process (ULURP)</span><div class="tags"><span class="tag tg">Guest lecture</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="gbar">Guest arrives at 6:45 and leads through 8:00. You open with 15 min and run the entitlement mapping exercise after.</div>
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:45</div><div class="bn">Your framing (15 min)</div><div class="bs">What happens when as-of-right isn't enough. Entitlement risk as a real line item in the development pro forma — time is money. Set up the guest.</div></div>
+      <div class="bl gue"><div class="bt">6:45–8:00</div><div class="bn">Guest — land use attorney or former DCP staffer</div><div class="bs">Full ULURP timeline: community board, borough president, CPC, City Council. Special permits, variances, text amendments. What can be negotiated. What kills projects. Real timeline, real costs, one case study from start to finish. Q&A throughout. Free to leave at 8:00.</div></div>
+      <div class="bl brk"><div class="bt">8:00–8:10</div><div class="bn">Break (guest departs)</div></div>
+      <div class="bl exc"><div class="bt">8:10–8:45</div><div class="bn">Entitlement pathway mapping</div><div class="bs">Students assess their parcel: does their proposed asset type require ULURP? Special permit? Variance? Map approvals needed and estimate time and cost. Share the hard cases with the room.</div></div>
+      <div class="bl dtw"><div class="bt">8:45–9:15</div><div class="bn">Deal of the week — pair 3</div><div class="bs">10 min + 5 min reaction.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>Pair 3</strong> — A ULURP approval, community board fight, or major rezoning — Hudson Yards, Gowanus, or City of Yes.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>ULURP: the full sequence and what each stage can do</li><li>Community board, borough president, CPC, City Council roles</li><li>Special permits, variances, and text amendments</li><li>Entitlement timeline and cost in the pro forma</li><li>Community opposition and negotiated community benefits</li><li>Political risk and how developers price and manage it</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>Close with: what does entitlement uncertainty do to a developer's required return? That bridges directly into DCF and financial modeling in Phase 3.</div>
+      <div class="gc"><div class="gl">Semester project</div>Students map their parcel's entitlement pathway. Does their proposed asset type require discretionary approval? One page added to their running memo.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 5</span><span class="wt">Offsite field trip: active development site</span><div class="tags"><span class="tag to">Offsite</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="tl">
+      <div class="bl off"><div class="bt">5:30–6:15</div><div class="bn">Arrive and tour</div><div class="bs">Meet at site. Developer, contractor, or asset manager leads. Students bring 3 prepared questions based on Weeks 1–4. Hard hats if active construction.</div></div>
+      <div class="bl off"><div class="bt">6:15–7:00</div><div class="bn">Structured Q&A on-site</div><div class="bs">Rotate through the host team if possible: design, finance, construction, leasing. Same asset, multiple perspectives.</div></div>
+      <div class="bl off"><div class="bt">7:00–7:45</div><div class="bn">Informal dinner nearby</div><div class="bs">Optional but strongly encouraged. Real conversations happen here.</div></div>
+      <div class="bl off"><div class="bt">7:45–8:30</div><div class="bn">Debrief discussion</div><div class="bs">What asset type is this? Who is the likely investor? What zoning allowed it? What approval process did it go through? Students now have the vocabulary to ask and answer these questions.</div></div>
+      <div class="bl off"><div class="bt">8:30–9:00</div><div class="bn">Reflection prompt</div><div class="bs">You close: how does what you saw change how you're thinking about your own parcel and asset type choice? Reflection memo due Week 6.</div></div>
+    </div>
+    <div class="dws non"><div class="dwl">Deal of the week</div><div class="dwn">None this week — field trip session.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Pre-trip: 3 prepared questions per student from Weeks 1–4</li><li>Identify asset type, investor profile, and zoning story of the site</li><li>See entitlement, site conditions, and construction realities firsthand</li><li>Post-trip reflection memo due Week 6</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>Placed here — after asset types, zoning, and entitlement but before financial modeling — so students visit with genuinely informed eyes before they learn how to price what they're seeing. Your JLL and WeWork networks are the best lead for securing the site.</div>
+      <div class="gc"><div class="gl">Semester project</div>Post-trip reflection memo due Week 6: what asset type did you see, who likely invested, what did the zoning allow, and what changed about how you're thinking about your own parcel?</div>
+    </div>
+  </div>
+</div>
+
+<div class="phase"><div class="pdot" style="background:#BA7517"></div>Phase 3 <span class="pdesc">— Financial underwriting</span></div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 6</span><span class="wt">DCF and financial modeling: the language of the deal</span><div class="tags"><span class="tag tg">Guest lecture</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="gbar">Guest arrives at 6:45 and leads through 8:00, including a live Excel walkthrough. Students need laptops.</div>
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:45</div><div class="bn">Your framing (15 min)</div><div class="bs">Why DCF is the common language every real estate professional speaks. Collect field trip memos. Frame the Excel session and how it connects to the parcel project.</div></div>
+      <div class="bl gue"><div class="bt">6:45–8:00</div><div class="bn">Guest — acquisitions analyst or financial modeler</div><div class="bs">DCF from first principles: what goes in, what comes out, why assumptions matter more than math. Live Excel walkthrough — students follow along on laptops. IRR vs. equity multiple. Sensitivity tables. The danger of false precision. Q&A throughout. Free to leave at 8:00.</div></div>
+      <div class="bl brk"><div class="bt">8:00–8:10</div><div class="bn">Break (guest departs)</div></div>
+      <div class="bl deb"><div class="bt">8:10–8:45</div><div class="bn">Model debrief + project connection</div><div class="bs">Which input moved IRR the most? How do cap rate assumptions differ by asset type — multifamily vs. office vs. industrial? What will be the hardest assumption to make for their specific parcel?</div></div>
+      <div class="bl dtw"><div class="bt">8:45–9:15</div><div class="bn">Deal of the week — pair 4</div><div class="bs">10 min + 5 min reaction.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>Pair 4 (moved from Week 5)</strong> — A deal where the financial structure was noteworthy — unusual financing, a recap, or a deal that repriced significantly from ask to close.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Time value of money</li><li>Building a DCF from scratch in Excel</li><li>Key inputs: revenue, NOI, cap rate, discount rate</li><li>IRR vs. equity multiple — what investors actually use</li><li>Sensitivity tables and the danger of false precision</li><li>Cap rate assumptions vary by asset type (Week 1 callback)</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>Key debrief question: cap rates for your chosen asset type drive everything in this model. Where did you get your number and how confident are you in it?</div>
+      <div class="gc"><div class="gl">Semester project</div>Students begin roughing out acquisition underwriting for their parcel: land value and preliminary construction cost using industry benchmarks. Due Week 8.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 7</span><span class="wt">Leverage: debt structures and the capital stack</span><div class="tags"><span class="tag tg">Guest lecture</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="gbar">Guest arrives at 6:45 and leads through 8:00. You open with 15 min and own the back half.</div>
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:45</div><div class="bn">Your framing (15 min)</div><div class="bs">Leverage as the deal multiplier. How the capital stack connects to both fund structure (Week 2) and asset type (Week 1) — lenders underwrite very differently for multifamily vs. office vs. construction loans. Set up the guest.</div></div>
+      <div class="bl gue"><div class="bt">6:45–8:00</div><div class="bn">Guest — real estate lender or debt fund professional</div><div class="bs">Senior, mezz, preferred equity — the full capital stack. LTV, DSCR, debt yield. Fixed vs. floating rate. Construction financing and transition to permanent debt. The math of leverage amplification on IRR. Cautionary cases: 2008 and 2023 office distress. Q&A throughout. Free to leave at 8:00.</div></div>
+      <div class="bl brk"><div class="bt">8:00–8:10</div><div class="bn">Break (guest departs)</div></div>
+      <div class="bl deb"><div class="bt">8:10–8:45</div><div class="bn">Leverage exercise + project connection</div><div class="bs">Pairs model one deal at 0%, 50%, and 70% LTV. Calculate IRR at each. Then: what leverage is realistic for their parcel's asset type? How does a construction lender treat multifamily differently from speculative office?</div></div>
+      <div class="bl dtw"><div class="bt">8:45–9:15</div><div class="bn">Deal of the week — pair 5</div><div class="bs">10 min + 5 min reaction.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>Pair 5</strong> — A deal that went wrong because of leverage — overleveraged acquisition, floating-rate maturity default, or a construction loan extension gone bad.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Capital stack: senior, mezz, preferred equity</li><li>LTV, DSCR, debt yield — how lenders underwrite</li><li>How lender appetite varies by asset type</li><li>Fixed vs. floating rate: right tool for which environment</li><li>Construction financing and transition to permanent debt</li><li>How leverage amplifies returns and risk</li><li>When leverage kills a deal</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>JPMorgan: lenders think about portfolio exposure by asset type and maintain concentration limits — a detail most students never hear about. Bring it.</div>
+      <div class="gc"><div class="gl">Semester project</div>Full underwriting draft due Week 9: land cost, demolition estimate, hard and soft construction costs, financing structure, projected stabilized NOI, exit cap, and IRR.</div>
+    </div>
+  </div>
+</div>
+
+<div class="phase"><div class="pdot" style="background:#D4537E"></div>Phase 4 <span class="pdesc">— Site prep and construction</span></div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 8</span><span class="wt">Environmental due diligence, demolition, valuation, and legal</span><div class="tags"><span class="tag ty">Your expertise</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–7:00</div><div class="bn">Your lecture: environmental and demolition (30 min)</div><div class="bs">Phase I and Phase II ESAs: triggers, cost, timeline. Remediation: who pays and under what programs. NYC brownfield tax credits. Asbestos abatement. Demolition sequencing and cost estimation. Environmental contingencies in the pro forma. Prior use research: DEC, NYC OATH, Sanborn maps.</div></div>
+      <div class="bl you"><div class="bt">7:00–7:15</div><div class="bn">Your lecture: valuation approaches (15 min)</div><div class="bs">The three approaches to value: income (cap rate and DCF), sales comparables, and cost approach. When lenders and appraisers use each. Why the appraisal and the buyer's underwriting are often different numbers — and what that gap means for deal financing. Your JLL transaction experience with appraisal contingencies.</div></div>
+      <div class="bl you"><div class="bt">7:15–7:30</div><div class="bn">Your lecture: legal and contracting (15 min)</div><div class="bs">The legal architecture of a real estate deal. Purchase and sale agreements: key provisions, representations and warranties, conditions to closing, earnest money and default. Construction contracts: GMP vs. lump sum, change orders, and how cost overruns get resolved. JV agreements: governance, decision rights, and what happens when partners disagree. Loan documents: covenants, recourse vs. non-recourse, and what lenders can actually do when things go wrong. Your JLL contracting background is directly relevant here.</div></div>
+      <div class="bl brk"><div class="bt">7:30–7:45</div><div class="bn">Break</div></div>
+      <div class="bl exc"><div class="bt">7:45–8:15</div><div class="bn">Parcel environmental screening + valuation exercise</div><div class="bs">Students research their parcels using NYC OATH and DEC spill database. What's the prior use? Any flags? Estimate Phase I cost. Then apply the three valuation approaches to their parcel: income value based on their projected NOI, a comp-based estimate using recent nearby sales, and a rough cost approach. Do all three converge? If not, why not?</div></div>
+      <div class="bl deb"><div class="bt">8:15–8:25</div><div class="bn">Debrief</div><div class="bs">Groups share environmental findings and valuation gaps. Which approach gave the highest value? Why do the three methods diverge for development sites vs. stabilized assets? Connect legal risk to valuation: how does an unresolved environmental liability or a poorly drafted PSA change what a buyer will pay?</div></div>
+      <div class="bl dtw"><div class="bt">8:25–9:05</div><div class="bn">Deal of the week — pairs 6 and 7</div><div class="bs">8 min each + 4 min class reaction each. Two back-to-back presentations.</div></div>
+      <div class="bl cls"><div class="bt">9:05–9:15</div><div class="bn">Project check-in</div><div class="bs">Quick pulse: where is everyone on the full underwriting draft due next week?</div></div>
+    </div>
+    <div class="dws dbl"><div class="dwl">Deal of the week — double session</div><div class="dwr"><strong>Pair 6</strong> — A brownfield redevelopment, Superfund-adjacent site, or remediation cost that nearly killed a deal.</div><div class="dwr"><strong>Pair 7</strong> — Any deal with a notable site prep or demolition story — asbestos abatement, historic structure demolition, or utility relocation.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Phase I and Phase II ESAs: triggers, cost, timeline</li><li>Remediation: who pays and under what programs</li><li>NYC brownfield programs and tax credits</li><li>Asbestos abatement and demolition sequencing</li><li>The three valuation approaches: income, sales comp, cost</li><li>The appraisal gap and what it means for deal financing</li><li>PSAs: key provisions, representations, earnest money, default</li><li>Construction contracts: GMP vs. lump sum, change orders</li><li>JV agreements: governance, decision rights, and partner disputes</li><li>Loan documents: covenants, recourse vs. non-recourse</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>Legal and contracting is where your JLL background shines — you've lived the contracting and transaction side of deals. Connect environmental liability directly to valuation: an unresolved Phase II or a poorly drafted PSA changes what any rational buyer will pay. And connect to energy: contaminated sites are often candidates for solar or storage where conventional development isn't viable.</div>
+      <div class="gc"><div class="gl">Semester project</div>Students add environmental screening findings, a demolition cost estimate, and a three-approach valuation summary to their running memo. Full underwriting draft due next week.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 9</span><span class="wt">Construction and development finance</span><div class="tags"><span class="tag tg">Guest lecture</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="gbar">Guest arrives at 6:45 and leads through 8:00. You open with 15 min and return full underwriting drafts during the debrief.</div>
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:45</div><div class="bn">Your framing (15 min)</div><div class="bs">Development vs. acquisition: fundamentally different risk profiles. How zoning, entitlement, environmental, and financing from Phases 2–3 all converge in the development pro forma. Set up the guest.</div></div>
+      <div class="bl gue"><div class="bt">6:45–8:00</div><div class="bn">Guest — developer or development lender</div><div class="bs">Hard costs, soft costs, contingency, developer fee. Construction loan mechanics: draws, interest reserve, completion guaranty. Transition from construction to permanent financing. Cost overrun risk. Developer profit margin vs. investor IRR — are they actually aligned? Real deal walkthrough. Q&A throughout. Free to leave at 8:00.</div></div>
+      <div class="bl brk"><div class="bt">8:00–8:10</div><div class="bn">Break (guest departs)</div></div>
+      <div class="bl deb"><div class="bt">8:10–8:45</div><div class="bn">Return underwriting drafts + construction cost refinement</div><div class="bs">Return Week 7 underwriting drafts with comments. Students refine construction cost section using per-SF benchmarks by asset type. Layer in soft costs, contingency, and construction interest. How does it change required rent?</div></div>
+      <div class="bl dtw"><div class="bt">8:45–9:15</div><div class="bn">Deal of the week — pair 8 + collect full underwriting</div><div class="bs">Collect full underwriting drafts. 10 min + 5 min reaction.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>Pair 8</strong> — A ground-up development, condo conversion, or adaptive reuse — ideally with a construction loan story.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Development pro forma: hard costs, soft costs, contingency, developer fee</li><li>Construction cost benchmarks by asset type</li><li>Construction loan: draws, interest reserve, completion guaranty</li><li>Transition from construction to permanent financing</li><li>Cost overrun risk and management strategies</li><li>Developer profit margin vs. investor IRR</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>Your MSRED is the credibility anchor here. Key debrief question: construction costs per SF vary dramatically by asset type — what does that mean for which projects pencil in today's market?</div>
+      <div class="gc"><div class="gl">Semester project</div>Full underwriting collected tonight. Revised version incorporating construction cost refinements due Week 12.</div>
+    </div>
+  </div>
+</div>
+
+<div class="phase"><div class="pdot" style="background:#534AB7"></div>Phase 5 <span class="pdesc">— Lease-up and asset operations</span></div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 10</span><span class="wt">Markets, brokerage, leasing, and the transaction process</span><div class="tags"><span class="tag ty">Your expertise</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:50</div><div class="bn">Your lecture: reading a market (20 min)</div><div class="bs">How investors decide where to buy before they find a specific parcel. Demographic trends, job growth, supply and demand dynamics, absorption rates, vacancy rates by submarket. What makes a market attractive for each asset type. The research tools practitioners actually use: CoStar, CBRE/JLL research reports, Census data, local planning departments.</div></div>
+      <div class="bl you"><div class="bt">6:50–7:15</div><div class="bn">Your lecture: brokerage and leasing (25 min)</div><div class="bs">Tenant rep vs. landlord rep — different incentives, different information, different loyalties. How deals get sourced: off-market vs. marketed, broker relationships, OM packages. Lease economics: base rent, free rent, TI allowances, escalations, options. How lease structure varies by asset type. Commission structures and how they shape broker behavior.</div></div>
+      <div class="bl brk"><div class="bt">7:15–7:30</div><div class="bn">Break</div></div>
+      <div class="bl exc"><div class="bt">7:30–8:10</div><div class="bn">Market and transaction analysis exercise</div><div class="bs">Groups of 5. Each group analyzes the submarket surrounding their semester parcel: pull vacancy rates, recent sale comps, and rent trends from CoStar or public sources. Then: given these market conditions, what is the investment thesis for their project? Is the market tightening or softening? Does that change what they build or when they exit?</div></div>
+      <div class="bl you"><div class="bt">7:15–7:30</div><div class="bn">Your lecture: the transaction process (15 min)</div><div class="bs">How a deal actually moves from first conversation to closing. Off-market sourcing vs. formal marketing. LOIs, purchase and sale agreements, due diligence periods, earnest money deposits, conditions to closing. Where deals fall apart and why. Your JLL transaction experience is the backbone of this.</div></div>
+      <div class="bl deb"><div class="bt">8:10–8:30</div><div class="bn">Debrief: what the market tells you</div><div class="bs">Groups share their submarket findings. How does the market picture change the investment thesis for their parcel? Would you still build the same thing in this submarket right now?</div></div>
+      <div class="bl dtw"><div class="bt">8:30–9:15</div><div class="bn">Deal of the week — pairs 9 and 10</div><div class="bs">8 min each + 4 min class reaction each. Two presentations to close the night.</div></div>
+    </div>
+    <div class="dws dbl"><div class="dwl">Deal of the week — double session</div><div class="dwr"><strong>Pair 9</strong> — A market story — a submarket that turned, a city that surprised investors, or a demographic shift that changed where capital flowed.</div><div class="dwr"><strong>Pair 10</strong> — A transaction story — a deal that fell apart in due diligence, a contested auction, or an off-market trade that shaped a submarket.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Tenant rep vs. landlord rep: different incentives and information</li><li>How deals get sourced, toured, and closed</li><li>Commission structures and broker behavior</li><li>Lease economics: base rent, free rent, TI, escalations, options</li><li>How lease structure varies by asset type</li><li>How every lease concession translates into NOI and value</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>This is your session end to end. JLL transaction work + WeWork landlord-side + tenant rep experience = a perspective most professors simply cannot offer. Bring a real deal story from your JLL days — a transaction that nearly fell apart, an off-market deal you sourced, or a lease you negotiated that shaped a building's value.</div>
+      <div class="gc"><div class="gl">Semester project</div>Students complete a one-page submarket analysis for their parcel: vacancy rate, recent rent comps, supply pipeline, and a brief statement of whether market conditions support their proposed development right now.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 11</span><span class="wt">Reading the operating statement: line by line</span><div class="tags"><span class="tag ty">Your expertise</span><span class="tag tg">Guest lecture</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="gbar">Guest arrives at 6:45 and leads through 8:00. You open with a 15-min lease structure framing, then run the exercise after the guest departs.</div>
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:45</div><div class="bn">Your framing: lease structures (15 min)</div><div class="bs">NNN vs. gross vs. modified gross — who pays what and why it changes NOI dramatically. WeWork as the modified gross example at scale. Bridge from Week 10 leasing into reading the full operating statement.</div></div>
+      <div class="bl gue"><div class="bt">6:45–8:00</div><div class="bn">Guest — asset manager or real estate CFO</div><div class="bs">Walk a real operating statement line by line: gross revenue, EGI, vacancy, every OpEx category, NOI, DSCR. Then: how seller pro formas get gamed — understated vacancy, missing capex, buried management fees, inflated rent bumps. What diligent buyers catch. Q&A throughout. Free to leave at 8:00.</div></div>
+      <div class="bl brk"><div class="bt">8:00–8:10</div><div class="bn">Break (guest departs)</div></div>
+      <div class="bl exc"><div class="bt">8:10–8:45</div><div class="bn">'Spot the manipulation' exercise</div><div class="bs">Groups receive a seller pro forma with 6 embedded errors. Find as many as possible. Each group calls out one error. You adjudicate: intentional or honest mistake? What does each error cost a buyer who misses it?</div></div>
+      <div class="bl dtw"><div class="bt">8:45–9:15</div><div class="bn">Deal of the week — pair 11</div><div class="bs">10 min + 5 min reaction.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>Pair 11</strong> — A sale where buyer and seller disagreed sharply on NOI — a disputed vacancy assumption, a lease-up play, or a cap rate argument.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>NNN vs. gross vs. modified gross — who pays what</li><li>Gross revenue, EGI, vacancy, all OpEx categories</li><li>NOI, cash-on-cash return, DSCR</li><li>Seller pro forma manipulation and buyer due diligence</li><li>How every line item connects back to valuation</li><li>Operating statement differences by asset type</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>WeWork: modified gross leases at scale. You bring the tenant-side credibility the guest doesn't have. The bridge from Week 10 leasing into Week 11 operating statement is the tightest conceptual link in the course.</div>
+      <div class="gc"><div class="gl">Semester project</div>Students build the stabilized operating statement for their parcel: projected rents, vacancy assumption, all OpEx categories, and NOI.</div>
+    </div>
+  </div>
+</div>
+
+<div class="phase"><div class="pdot" style="background:#993C1D"></div>Phase 6 <span class="pdesc">— Responsible development and the future</span></div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 12</span><span class="wt">Affordable housing: finance, policy, and equity</span><div class="tags"><span class="tag ty">Your expertise</span><span class="tag tg">Guest lecture</span><span class="tag ts">Special topic</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="gbar">Guest arrives at 6:45 and leads through 8:00. You open and close.</div>
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:45</div><div class="bn">Your framing (15 min)</div><div class="bs">The affordable housing gap in NYC and the U.S. LIHTC mechanics. Section 8, HUD, HOME, inclusionary zoning. Why sophisticated institutional capital is increasingly in this space.</div></div>
+      <div class="bl gue"><div class="bt">6:45–8:00</div><div class="bn">Guest — affordable housing developer or CDFI lender</div><div class="bs">How a LIHTC deal gets financed from start to finish. The full subsidy stack. Who makes money and how much. The real timeline — significantly longer than market rate. Gentrification and displacement: what does responsible development look like? Community land trusts. Q&A throughout. Free to leave at 8:00.</div></div>
+      <div class="bl brk"><div class="bt">8:00–8:10</div><div class="bn">Break (guest departs)</div></div>
+      <div class="bl deb"><div class="bt">8:10–8:45</div><div class="bn">Class discussion + project connection</div><div class="bs">What surprised you? Could your parcel include an affordable housing component — and what would it do to your financing and returns? What does City of Yes mean for inclusionary housing going forward?</div></div>
+      <div class="bl dtw"><div class="bt">8:45–9:15</div><div class="bn">Deal of the week — pair 12 + revised underwriting due</div><div class="bs">Collect revised underwriting. 10 min + 5 min reaction.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>Pair 12</strong> — An affordable housing development, LIHTC deal, or inclusionary housing negotiation. NYC HPD or HDC pipeline is a good source.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>The affordable housing gap in NYC and the U.S.</li><li>LIHTC: mechanics, investors, and return profiles</li><li>The subsidy stack: Section 8, HUD, HOME, CDBG</li><li>CDFIs and mission-driven capital</li><li>Gentrification, displacement, and community land trusts</li><li>Inclusionary zoning: mandatory vs. voluntary, City of Yes implications</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>You open and moderate. Your cross-sector background lets you ask the practitioner questions they haven't been asked before. You don't need to be the expert — you need to be a great moderator.</div>
+      <div class="gc"><div class="gl">Semester project</div>Students assess whether their parcel could include an affordable housing component and what it would mean for financing and returns. One paragraph added to their memo.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 13</span><span class="wt">Sustainability, ESG, and energy as a value driver</span><div class="tags"><span class="tag ty">Your expertise</span><span class="tag ts">Special topic</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–7:15</div><div class="bn">Your lecture: sustainability and ESG (45 min)</div><div class="bs">LEED, ENERGY STAR, GRESB — what they mean and who actually cares. The green premium: real, how big, in which markets. Regulatory sticks: NYC Local Law 97, EU taxonomy, SEC climate disclosure. Stranded asset risk. PACE financing and green bonds as carrots.</div></div>
+      <div class="bl you"><div class="bt">7:15–7:30</div><div class="bn">Your lecture: energy as the next frontier (15 min)</div><div class="bs">On-site solar, battery storage, microgrids, PPAs. Data centers as the most energy-intensive asset class. EV charging economics. IRA incentives. Grid constraints and site selection.</div></div>
+      <div class="bl brk"><div class="bt">7:30–7:45</div><div class="bn">Break</div></div>
+      <div class="bl exc"><div class="bt">7:45–8:30</div><div class="bn">ESG + energy opportunity exercise</div><div class="bs">Groups apply both lenses to their parcel: Local Law 97 compliance, on-site solar or storage opportunity, LEED target, EV charging feasibility. Estimate financial impact on NOI and valuation. Add to project memo.</div></div>
+      <div class="bl deb"><div class="bt">8:30–8:50</div><div class="bn">Carrots and sticks discussion</div><div class="bs">What's actually moving the needle on sustainability? Rank: regulatory mandates, lender requirements, tenant demands, investor ESG pressure. Real value driver or greenwashing?</div></div>
+      <div class="bl dtw"><div class="bt">8:50–9:15</div><div class="bn">Deal of the week — pair 13</div><div class="bs">10 min + 5 min reaction.</div></div>
+    </div>
+    <div class="dws"><div class="dwl">Deal of the week</div><div class="dwr"><strong>Pair 13</strong> — A deal where ESG was a factor — green bond financing, LEED premium in a sale, Local Law 97 penalty, or a building with a PPA.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>LEED, ENERGY STAR, GRESB: what they mean and who cares</li><li>The green premium: evidence, size, and market variation</li><li>NYC Local Law 97, EU taxonomy, SEC climate disclosure</li><li>PACE financing and green bonds as carrots</li><li>Stranded asset risk for non-compliant buildings</li><li>On-site solar, storage, PPAs, EV charging, IRA incentives</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>Your combined signature session. No other RE finance professor at Fordham is teaching the intersection of sustainability and energy. Own it completely.</div>
+      <div class="gc"><div class="gl">Semester project</div>Students add a sustainability and energy section to their project memo: LL97 compliance, on-site energy opportunity, LEED target.</div>
+    </div>
+  </div>
+</div>
+
+<div class="phase"><div class="pdot" style="background:#444441"></div>Phase 7 <span class="pdesc">— Exit, disposition, and capstone</span></div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 14</span><span class="wt">Exit, disposition, REITs, and course synthesis</span><div class="tags"><span class="tag ty">Your expertise</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="tl">
+      <div class="bl you"><div class="bt">6:30–6:55</div><div class="bn">Your lecture: exit and disposition (25 min)</div><div class="bs">How investors get out: sale, recapitalization, refinance, IPO/REIT listing. What drives exit timing: hold period, market conditions, fund lifecycle, tax strategy. Cap rate compression vs. expansion at exit. Broker selection and the sale process. 1031 exchanges and tax-deferred disposition.</div></div>
+      <div class="bl you"><div class="bt">6:55–7:15</div><div class="bn">Your lecture: REITs and the public market (20 min)</div><div class="bs">How REITs price real estate differently from private buyers. Net Asset Value (NAV): what it is, how it's calculated, and why REITs trade at a premium or discount to NAV. What that spread tells you about private vs. public market sentiment. REITs as an exit vehicle: when does selling to a REIT make sense vs. a private buyer? Key REIT sectors and how they map to the asset types studied all semester. The REIT IPO process and what it takes to get there.</div></div>
+      <div class="bl brk"><div class="bt">7:15–7:30</div><div class="bn">Break</div></div>
+      <div class="bl exc"><div class="bt">7:30–8:10</div><div class="bn">Exit underwriting + full memo assembly</div><div class="bs">Students finalize the exit section of their project: exit cap rate assumption, projected sale price, net proceeds, final IRR and equity multiple. Consider: who is the most likely buyer for your asset at exit — a private buyer, an institution, or a REIT? How does that change your pricing assumptions? Then a full memo review pass — does every section connect into a coherent investment thesis?</div></div>
+      <div class="bl deb"><div class="bt">8:10–8:50</div><div class="bn">Course synthesis conversation</div><div class="bs">Full class, no slides, open conversation. Walk the full lifecycle: capital landscape → asset type → site → zoning → entitlement → environmental → financing → construction → leasing → operations → sustainability → exit. The semester told one story. What's the throughline? What surprised you most? What do you think differently about now than you did in Week 1?</div></div>
+      <div class="bl cls"><div class="bt">8:50–9:15</div><div class="bn">Final memo logistics</div><div class="bs">Walk through Week 15 expectations. Final memos due at start of class. Distribute the scoring rubric. Answer any last questions.</div></div>
+    </div>
+    <div class="dws non"><div class="dwl">Deal of the week</div><div class="dwn">None this week — synthesis and exit session.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Exit strategies: sale, recap, refinance, REIT listing</li><li>What drives exit timing: market, hold period, fund lifecycle</li><li>Cap rate compression vs. expansion at exit</li><li>The disposition process: broker selection, marketing, closing</li><li>1031 exchanges and tax-deferred exit strategies</li><li>REITs: structure, NAV, premium/discount to private market</li><li>Public vs. private market pricing and what the spread signals</li><li>REITs as an exit vehicle vs. private buyer — when does each make sense?</li><li>Connecting exit assumptions back to Day 1 underwriting</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>Your JLL transaction background anchors the exit and disposition lecture. The REIT section closes the loop on Week 1 — students started by learning who invests in real estate; now they understand how those investors ultimately get liquid. The synthesis conversation should feel like a real debrief, not a summary slide. Come with a question that genuinely stumps you too.</div>
+      <div class="gc"><div class="gl">Semester project</div>Final investment memos due at the start of Week 15. Memo covers: parcel analysis, zoning and entitlement, environmental and demolition, full development pro forma, stabilized operating statement, sustainability and energy, exit underwriting (including most likely buyer type at exit), and investment recommendation.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch" onclick="tog(this)"><span class="wn">Week 15</span><span class="wt">Student presentations and course close</span><div class="tags"><span class="tag ts">Special topic</span></div><span class="arr">▶</span></div>
+  <div class="bd">
+    <div class="tl">
+      <div class="bl exc"><div class="bt">6:30–8:10</div><div class="bn">Student investment memo presentations</div><div class="bs">6 groups of 5. Each presents their NYC parcel development memo: 12 min + 3 min Q<div class="bl exc"><div class="bt">6:30–8:10</div><div class="bn">Student investment memo presentations</div><div class="bs">6 groups of 5. Each presents their NYC parcel development memo: 12 min + 3 min Q&A from industry guests. Strict timekeeper. You score each group on a simple rubric you distribute in Week 14.</div></div>A from you. Strict timekeeper. You score each group on a simple rubric distributed in Week 14.</div></div>
+      <div class="bl brk"><div class="bt">8:10–8:20</div><div class="bn">Break</div></div>
+      <div class="bl deb"><div class="bt">8:20–8:50</div><div class="bn">Presentation debrief</div><div class="bs">You give honest feedback across all six groups: what impressed you, what you would probe further, what was missing. Draw out patterns across the room — what did every group struggle with? What did every group get right?</div></div>
+      <div class="bl cls"><div class="bt">8:50–9:15</div><div class="bn">Course close</div><div class="bs">No slides. You talk. From macro capital flows in Week 1 to a fully underwritten NYC parcel in Week 15 — what did the semester add up to? What do you want them to carry into their careers?</div></div>
+    </div>
+    <div class="dws non"><div class="dwl">Deal of the week</div><div class="dwn">None this week — student presentations.</div></div>
+    <div class="grid">
+      <div class="gc"><div class="gl">Topics</div><ul><li>Student investment memo presentations — full NYC development lifecycle</li><li>Industry panel Q&A and honest feedback</li><li>Career pathways: acquisitions, development, lending, brokerage, corporate RE, policy, sustainability, energy</li><li>Course synthesis: asset type to exit, macro to micro</li></ul></div>
+      <div class="gc"><div class="gl">Your angle</div>No panel, no guests — just you closing the semester you built. Your career across JPMorgan, JLL, WeWork, MIT, and renewable energy is the closing argument for why real estate is bigger and more interesting than anyone imagined on Day 1.</div>
+      <div class="gc"><div class="gl">Semester project</div>Memos assessed on: asset type rationale, zoning and entitlement, environmental diligence, development pro forma, stabilized operating statement, sustainability and energy, exit underwriting, and clarity of investment recommendation.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function tog(h) {
+  var b = h.nextElementSibling;
+  var a = h.querySelector('.arr');
+  var o = b.classList.contains('open');
+  b.classList.toggle('open', !o);
+  a.classList.toggle('open', !o);
+}
+</script>
+</body>
+</html>
